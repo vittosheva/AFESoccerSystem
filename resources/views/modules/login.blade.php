@@ -4,7 +4,7 @@
         <h3 class="panel-title text-center">Iniciar Sesión</h3>
     </div>
 
-    {!! Form::open(['route' => 'login.postlogin', 'method' => 'POST', 'autocomplete' => 'off', 'role' => 'form']) !!}
+    {!! Form::open(['url' => 'login', 'method' => 'POST', 'autocomplete' => 'off', 'role' => 'form']) !!}
 
         <div class="panel-body">
             <div class="row">
@@ -28,7 +28,7 @@
                             Recordarme
                         </label>
                     </div>
-                    <p><a href="{{ route('login.forgotpassword') }}">¿Olvidó su contraseña?</a></p>
+                    <p><a href="{{ url('login/forgot-password') }}">¿Olvidó su contraseña?</a></p>
                 </div>
 
                 <div class="col-xs-12 col-sm-6 col-md-6 social-login-box">
@@ -59,7 +59,7 @@
 
                 @if (Config::get('settings.showRegister'))
                 <div class="col-xs-12 col-sm-6 col-md-6">
-                    <p>¿No tiene cuenta? <a href="{{ route('login.create') }}">Regístrece</a></p>
+                    <p>¿No tiene cuenta? <a href="{{ url('login/register') }}">Regístrece</a></p>
                 </div>
                 @endif
 

@@ -3,11 +3,11 @@
     <div class="panel-heading">
         <h3 class="panel-title text-center">Registrar</h3>
         <div class="btn-back-right">
-            <a href="{{ route('login.index') }}" title="Volver"><i class="fa fa-arrow-circle-left fa-2x"></i></a>
+            <a href="{{ url('login') }}" title="Volver"><i class="fa fa-arrow-circle-left fa-2x"></i></a>
         </div>
     </div>
 
-    {!! Form::open(['route' => 'login.store', 'method' => 'POST', 'autocomplete' => 'off', 'role' => 'form']) !!}
+    {!! Form::open(['url' => 'login/register', 'method' => 'POST', 'autocomplete' => 'off', 'role' => 'form']) !!}
 
     <div class="panel-body">
         <div class="row">

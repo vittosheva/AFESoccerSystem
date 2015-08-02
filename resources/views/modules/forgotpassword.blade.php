@@ -3,11 +3,11 @@
     <div class="panel-heading">
         <h3 class="panel-title text-center">Olvidó su contraseña</h3>
         <div class="btn-back-right">
-            <a href="{{ route('login.index') }}" title="Volver"><i class="fa fa-arrow-circle-left fa-2x"></i></a>
+            <a href="{{ url('login') }}" title="Volver"><i class="fa fa-arrow-circle-left fa-2x"></i></a>
         </div>
     </div>
 
-    {!! Form::open(['route' => 'login.forgotpassword', 'method' => 'POST', 'autocomplete' => 'off', 'role' => 'form']) !!}
+    {!! Form::open(['url' => 'login/forgot-password', 'method' => 'POST', 'autocomplete' => 'off', 'role' => 'form']) !!}
 
     <div class="panel-body">
         <div class="row">
@@ -21,7 +21,7 @@
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                     {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email', 'tabindex' => 1, 'required', 'autofocus']) !!}
                 </div>
-                <p>¿No tiene cuenta? <a href="{{ route('login.create') }}">Regístrece</a></p>
+                <p>¿No tiene cuenta? <a href="{{ url('login/register') }}">Regístrece</a></p>
             </div>
 
         </div>

@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'America/Guayaquil',
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -95,7 +95,7 @@ return [
     |
     */
 
-    'log' => 'single',
+    'log' => 'errorlog',
 
     /*
     |--------------------------------------------------------------------------
@@ -144,6 +144,9 @@ return [
         AfeSoccerSystem\Providers\EventServiceProvider::class,
         AfeSoccerSystem\Providers\RouteServiceProvider::class,
 
+        /* Laravel Collective */
+        Collective\Html\HtmlServiceProvider::class,
+
     ],
 
     /*
@@ -191,6 +194,10 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+
+        /* Laravel Collective */
+        'Form'      => Collective\Html\FormFacade::class,
+        'Html'      => Collective\Html\HtmlFacade::class,
 
     ],
 

@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Homepage
+Route::get('/', 'FrontController@index');
+
+
+// Login pages
+Route::controller('login', 'LoginController');

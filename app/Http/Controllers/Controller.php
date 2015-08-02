@@ -10,7 +10,7 @@ abstract class Controller extends BaseController
 {
     use DispatchesJobs, ValidatesRequests;
 
-    protected $website;
+    public $website;
 
     public function __construct()
     {
