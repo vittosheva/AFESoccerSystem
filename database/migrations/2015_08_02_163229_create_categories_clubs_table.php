@@ -15,9 +15,9 @@ class CreateCategoriesClubsTable extends Migration
         Schema::create('categories_clubs', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('club_id')->unsigned();
-            $table->foreign('club_id')->references('club_id')->on('club');
+            $table->foreign('club_id')->references('id')->on('clubs');
             $table->integer('category_id')->unsigned();
-            $table->foreign('category_id')->references('category_id')->on('category');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->string('year', 4);
             $table->boolean('active')->default('1');
         });
