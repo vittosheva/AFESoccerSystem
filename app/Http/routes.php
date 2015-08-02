@@ -14,6 +14,8 @@
 // Homepage
 Route::get('/', 'FrontController@index');
 
-
 // Login pages
 Route::controller('login', 'LoginController');
+
+// Admin page
+Route::get('admin', 'AdminController@getIndex');

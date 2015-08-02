@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use AfeSoccerSystem\Http\Requests;
 use AfeSoccerSystem\Http\Controllers\Controller;
 
+use AfeSoccerSystem\Http\Requests\LoginRequest;
+use Illuminate\Support\Facades\Redirect;
+
 class LoginController extends Controller
 {
 
@@ -17,16 +20,23 @@ class LoginController extends Controller
     {
         return view('front.login')->with([
             'title'     => 'Iniciar sesión' . $this->website,
-            'keywords'  => 'afe, login, sistema afe',
+            'keywords'  => 'afe, login, sistema afe'
         ]);
     }
 
     /**
      * Post Login page
      */
-    public function postIndex(Request $request)
+    public function postIndex(LoginRequest $request)
     {
-        return "postIndex";
+        if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
+            return Redirect::to('admin');
+        }
+
+        return Redirect::to('login')->with([
+            'title'     => 'Iniciar sesión' . $this->website,
+            'keywords'  => 'afe, login, sistema afe'
+        ])->withInput();
     }
 
 
@@ -39,7 +49,7 @@ class LoginController extends Controller
     {
         return view('front.register')->with([
             'title'     => 'Registro' . $this->website,
-            'keywords'  => 'afe, login, sistema afe',
+            'keywords'  => 'afe, login, sistema afe'
         ]);
     }
 
@@ -61,7 +71,7 @@ class LoginController extends Controller
     {
         return view('front.forgotpassword')->with([
             'title'     => 'Olvidó su contraseña' . $this->website,
-            'keywords'  => 'afe, login, sistema afe',
+            'keywords'  => 'afe, login, sistema afe'
         ]);
     }
 
