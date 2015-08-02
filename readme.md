@@ -1,3 +1,3 @@
-## Proyecto AFE Soccer System
+## Proyect AFE Soccer System
 
-Aplicación en desarrollo usando Laravel 5.1
+Web Application develop in Laravel 5.1
