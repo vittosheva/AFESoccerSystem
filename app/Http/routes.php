@@ -17,5 +17,7 @@ Route::get('/', 'FrontController@index');
 // Login pages
 Route::controller('login', 'LoginController');
 
-// Admin page
-Route::get('admin', 'AdminController@getIndex');
+// Admin Group
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
+    Route::get('/', 'AdminController@getIndex');
+});

@@ -2,6 +2,7 @@
 
 namespace AfeSoccerSystem\Http\Controllers;
 
+use AfeSoccerSystem\Http\Controllers\Auth\AuthController;
 use Illuminate\Http\Request;
 
 use AfeSoccerSystem\Http\Requests;
@@ -9,6 +10,9 @@ use AfeSoccerSystem\Http\Controllers\Controller;
 
 use AfeSoccerSystem\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\Redirect;
+
+use Auth;
+use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
@@ -29,14 +33,23 @@ class LoginController extends Controller
      */
     public function postIndex(LoginRequest $request)
     {
-        if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
-            return Redirect::to('admin');
+        $this->validate($request, $request->rules());
+
+        $credentials = [
+            'email' => $request['email'],
+            'password' => $request['password'],
+            'active' => 1
+        ];
+
+        if (Auth::attempt($credentials, $request->has('remember'))) {
+            return redirect()->intended('admin');
         }
 
-        return Redirect::to('login')->with([
+        return redirect('admin/login')->with([
             'title'     => 'Iniciar sesión' . $this->website,
             'keywords'  => 'afe, login, sistema afe'
-        ])->withInput();
+        ])->withInput($request->only('email'))
+          ->withErrors(['email' => 'No existe el usuario con las credenciales proporcionadas']);
     }
 
 
@@ -81,6 +94,18 @@ class LoginController extends Controller
     public function postForgotPassword(Request $request)
     {
         return "postForgotPassword";
+    }
+
+
+
+
+    /**
+     * Get Logout of admin
+     */
+    public function getLogout()
+    {
+        Auth::logout();
+        return Redirect::to('/');
     }
 
 }

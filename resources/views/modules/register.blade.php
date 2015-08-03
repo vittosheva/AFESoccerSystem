@@ -26,10 +26,6 @@
                     {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Correo electrónico', 'tabindex' => 2, 'required']) !!}
                 </div>
                 <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    {!! Form::text('username', null, ['class' => 'form-control', 'placeholder' => 'Usuario', 'tabindex' => 3, 'required']) !!}
-                </div>
-                <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                     {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Contraseña', 'tabindex' => 4, 'required']) !!}
                 </div>

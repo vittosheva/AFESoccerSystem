@@ -24,7 +24,7 @@
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" value="Remember" tabindex="3">
+                            <input type="checkbox" name="remember" value="Remember" tabindex="3">
                             Recordarme
                         </label>
                     </div>
