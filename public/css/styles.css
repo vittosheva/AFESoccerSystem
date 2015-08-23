@@ -463,34 +463,32 @@ h1.page-header {
 
 
 /*
-OWN
+OWN STYLES
 */
-body {
-    font-size: 12px;
-}
-.pagination {
-    display: table;
-    margin: 0 auto;
-}
-.red {
-    color:red;
-}
-.form-area {
-    background-color: #FAFAFA;
-    padding: 10px 40px 20px;
-    margin: 10px 0px 60px;
-    border: 1px solid #2e6da4;
-}
-.error-message {
-    margin: -16px -16px 20px;
-    border-radius: 0;
-}
-.side-menu i.fa, .secondarymenu i.fa {
-    margin-right: 10px;
-}
+body { font-size: 12px; }
+.pagination { display: table; margin: 0 auto; }
+.red { color:red; }
+.form-area { background-color: #FAFAFA; padding: 10px 40px 20px; margin: 10px 0px 60px; border: 1px solid #2e6da4; }
+.error-message { margin: -16px -16px 20px; border-radius: 0; }
+.side-menu i.fa, .secondarymenu i.fa { margin-right: 10px; }
+
+/* Errores */
+.error label, .error input, .error select, .error textarea { border-color: #cb3838; color: #cb3838; }
 
 
-.panel{ margin-top: 10%; }
+/* Register */
+.main-content { width: 500px; margin: 0 auto; position: relative; }
+.panel-form { background: url("../images/mitutoriadigital.jpg") no-repeat center top; height: 590px; }
+#form-register fieldset { width: 75%; margin: 0 auto; }
+.button-send { background: #de1d83; color: #fff; text-transform: uppercase; }
+.button-send:hover { background: #be1b71; color: #fff; }
+.form-horizontal .control-label { text-align: right; padding-top: 9px; }
+
+
+/* Front */
+.login { padding-top: 0 !important; margin-top: 205px; }
+.panel{ padding-top: 160px; }
+.success{ padding-top: 160px; text-align: center; }
 .btn-label {position: relative;left: -12px;display: inline-block;padding: 6px 12px;background: rgba(0,0,0,0.15);border-radius: 3px 0 0 3px;}
 .btn-labeled {padding-top: 0;padding-bottom: 0;}
 .input-group { margin-bottom:10px; }
@@ -502,6 +500,39 @@ body {
 .btn-back-right { position: absolute; right: 0; top: 0; margin: 6px 15px 0 0; }
 .btn-back-right a{ color: #fff; }
 
+
+/* Logo */
+.logo { background: transparent; height: 150px; position: absolute; width: 100%; }
+.logo a { display: block; height: 100%; }
+
+
+/* Admin */
+#admin .panel { padding-top: 0; margin-top: 160px;}
+
+.bgcover {
+    height: 475px;
+    background-image: url('/images/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*overflow: hidden;*/
+}
+
+
+/* Tooltip */
+.tooltip.top .tooltip-inner {
+    background-color: #cb3838;
+}
+.tooltip.top .tooltip-arrow {
+    border-top-color: #cb3838;
+}
+.tooltip-inner {
+    max-width: 200px;
+    padding: 6px 12px;
+    color: #fff;
+    text-align: center;
+    background-color: #cb3838;
+    border-radius: 4px;
+}
 
 /*==================================================
  * Effect 2

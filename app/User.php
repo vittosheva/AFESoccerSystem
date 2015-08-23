@@ -1,6 +1,6 @@
 <?php
 
-namespace AfeSoccerSystem;
+namespace MiTutorialDigital;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;

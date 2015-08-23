@@ -1,6 +1,6 @@
 <?php
 
-namespace AfeSoccerSystem\Providers;
+namespace MiTutorialDigital\Providers;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'AfeSoccerSystem\Events\SomeEvent' => [
-            'AfeSoccerSystem\Listeners\EventListener',
+        'MiTutorialDigital\Events\SomeEvent' => [
+            'MiTutorialDigital\Listeners\EventListener',
         ],
     ];
 

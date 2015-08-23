@@ -3,9 +3,9 @@
 
 @section('content')
 
-    <div class="well-lg">
-        <p>Bienvenido al panel de control: <?php echo Auth::user()->name; ?></p>
-        <p><a href="{{ url('login/logout') }}">Salir</a></p>
-    </div>
+<div class="well-lg">
+    <p>Bienvenido al panel de control: <?php echo Auth::user()->name; ?></p>
+    <p><a href="{{ route('admin.logout.view') }}">Salir</a></p>
+</div>
 
 @endsection

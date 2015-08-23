@@ -1,6 +1,6 @@
 <?php
 
-namespace AfeSoccerSystem\Http\Requests;
+namespace MiTutorialDigital\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

@@ -140,9 +140,9 @@ return [
         /*
          * Application Service Providers...
          */
-        AfeSoccerSystem\Providers\AppServiceProvider::class,
-        AfeSoccerSystem\Providers\EventServiceProvider::class,
-        AfeSoccerSystem\Providers\RouteServiceProvider::class,
+        MiTutorialDigital\Providers\AppServiceProvider::class,
+        MiTutorialDigital\Providers\EventServiceProvider::class,
+        MiTutorialDigital\Providers\RouteServiceProvider::class,
 
         /* Laravel Collective */
         Collective\Html\HtmlServiceProvider::class,

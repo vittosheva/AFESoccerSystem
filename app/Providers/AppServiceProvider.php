@@ -1,6 +1,6 @@
 <?php
 
-namespace AfeSoccerSystem\Providers;
+namespace MiTutorialDigital\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

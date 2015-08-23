@@ -2,14 +2,10 @@
 
 @section('content')
 
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-7 col-md-offset-2">
+<div class="main-content">
 
-                @include('modules.register')
+    @include('front.modules.register')
 
-            </div>
-        </div>
-    </div>
+</div>
 
 @endsection

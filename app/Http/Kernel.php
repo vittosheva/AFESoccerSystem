@@ -1,6 +1,6 @@
 <?php
 
-namespace AfeSoccerSystem\Http;
+namespace MiTutorialDigital\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -13,11 +13,11 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
-        \AfeSoccerSystem\Http\Middleware\EncryptCookies::class,
+        \MiTutorialDigital\Http\Middleware\EncryptCookies::class,
         \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-        \AfeSoccerSystem\Http\Middleware\VerifyCsrfToken::class,
+        \MiTutorialDigital\Http\Middleware\VerifyCsrfToken::class,
     ];
 
     /**
@@ -26,8 +26,8 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \AfeSoccerSystem\Http\Middleware\Authenticate::class,
+        'auth' => \MiTutorialDigital\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'guest' => \AfeSoccerSystem\Http\Middleware\RedirectIfAuthenticated::class,
+        'guest' => \MiTutorialDigital\Http\Middleware\RedirectIfAuthenticated::class,
     ];
 }

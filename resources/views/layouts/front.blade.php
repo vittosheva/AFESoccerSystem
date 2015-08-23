@@ -9,20 +9,12 @@
     <meta name="author" content="{{ Config::get('settings.author') }}">
     @include('layouts.header.styles')
 </head>
-<body>
+<body id="front">
 
-<!-- Page Content -->
-<div class="container">
-
-    <div class="row">
-
+    <div class="bgcover2">
         @yield('content')
-
     </div>
+    @include('layouts.footer.scripts')
 
-</div>
-<!-- /.container -->
-
-@include('layouts.footer.scripts')
 </body>
 </html>

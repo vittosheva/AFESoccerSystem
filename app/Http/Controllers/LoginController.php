@@ -1,14 +1,14 @@
 <?php
 
-namespace AfeSoccerSystem\Http\Controllers;
+namespace MiTutorialDigital\Http\Controllers;
 
-use AfeSoccerSystem\Http\Controllers\Auth\AuthController;
+use MiTutorialDigital\Http\Controllers\Auth\AuthController;
 use Illuminate\Http\Request;
 
-use AfeSoccerSystem\Http\Requests;
-use AfeSoccerSystem\Http\Controllers\Controller;
+use MiTutorialDigital\Http\Requests;
+use MiTutorialDigital\Http\Controllers\Controller;
 
-use AfeSoccerSystem\Http\Requests\LoginRequest;
+use MiTutorialDigital\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\Redirect;
 
 use Auth;
@@ -22,7 +22,7 @@ class LoginController extends Controller
      */
     public function getIndex()
     {
-        return view('front.login')->with([
+        return view('back.login')->with([
             'title'     => 'Iniciar sesión' . $this->website,
             'keywords'  => 'afe, login, sistema afe'
         ]);
@@ -38,18 +38,27 @@ class LoginController extends Controller
         $credentials = [
             'email' => $request['email'],
             'password' => $request['password'],
-            'active' => 1
+            'active' => 1,
         ];
 
-        if (Auth::attempt($credentials, $request->has('remember'))) {
-            return redirect()->intended('admin');
-        }
+        $this->authenticate($credentials, $request['remember']);
 
-        return redirect('admin/login')->with([
-            'title'     => 'Iniciar sesión' . $this->website,
-            'keywords'  => 'afe, login, sistema afe'
-        ])->withInput($request->only('email'))
-          ->withErrors(['email' => 'No existe el usuario con las credenciales proporcionadas']);
+        return Redirect::back()
+            ->withInput($request->except('password'))
+            ->withErrors(['email' => 'No existe el usuario con las credenciales proporcionadas']);
+    }
+
+
+    /**
+     * Handle an authentication attempt.
+     *
+     * @return Response
+     */
+    public function authenticate($credentials, $remember)
+    {
+        if (Auth::attempt($credentials, $remember)) {
+            return redirect()->intended('admin/dashboard');
+        }
     }
 
 
@@ -60,7 +69,7 @@ class LoginController extends Controller
      */
     public function getRegister()
     {
-        return view('front.register')->with([
+        return view('back.register')->with([
             'title'     => 'Registro' . $this->website,
             'keywords'  => 'afe, login, sistema afe'
         ]);
@@ -82,7 +91,7 @@ class LoginController extends Controller
      */
     public function getForgotPassword()
     {
-        return view('front.forgotpassword')->with([
+        return view('back.forgotpassword')->with([
             'title'     => 'Olvidó su contraseña' . $this->website,
             'keywords'  => 'afe, login, sistema afe'
         ]);
@@ -105,7 +114,7 @@ class LoginController extends Controller
     public function getLogout()
     {
         Auth::logout();
-        return Redirect::to('/');
+        return redirect()->route('admin.login.view');
     }
 
 }

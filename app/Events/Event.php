@@ -1,6 +1,6 @@
 <?php
 
-namespace AfeSoccerSystem\Events;
+namespace MiTutorialDigital\Events;
 
 abstract class Event
 {

@@ -15,8 +15,8 @@ return [
     */
 
     'mailgun' => [
-        'domain' => '',
-        'secret' => '',
+        'domain' => 'sandbox8de2524974b64e77b68d6ab71bc82199.mailgun.org',
+        'secret' => 'key-c4382c8c9692e01dc84268898854bfa1',
     ],
 
     'mandrill' => [
@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model'  => AfeSoccerSystem\User::class,
+        'model'  => MiTutorialDigital\User::class,
         'key'    => '',
         'secret' => '',
     ],

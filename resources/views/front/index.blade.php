@@ -2,15 +2,14 @@
 
 @section('content')
 
-    <div class="container">
-        <div class="row">
+<div class="container">
+    <div class="row">
+        <div style="width: 600px; margin: 0 auto;">
             <div class="well-lg">
-                <p><a href="{{ url('/') }}">Inicio</a></p>
-                <p><a href="{{ url('login') }}">Iniciar Sesión</a></p>
-                <p><a href="{{ url('login/forgot-password') }}">Olvidó su contraseña</a></p>
-                <p><a href="{{ url('login/register') }}">Registrarse</a></p>
+                Portada
             </div>
         </div>
     </div>
+</div>
 
 @endsection

@@ -1,6 +1,6 @@
 <?php
 
-namespace AfeSoccerSystem\Http\Middleware;
+namespace MiTutorialDigital\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;

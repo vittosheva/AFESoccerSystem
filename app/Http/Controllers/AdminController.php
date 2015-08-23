@@ -1,17 +1,27 @@
 <?php
 
-namespace AfeSoccerSystem\Http\Controllers;
+namespace MiTutorialDigital\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use AfeSoccerSystem\Http\Requests;
-use AfeSoccerSystem\Http\Controllers\Controller;
+use MiTutorialDigital\Http\Requests;
+use MiTutorialDigital\Http\Controllers\Controller;
 
 use Auth;
 use Redirect;
 
 class AdminController extends Controller
 {
+
+    /**
+     * Create a new authentication controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Get to admin index

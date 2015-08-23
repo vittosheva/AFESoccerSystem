@@ -17,9 +17,9 @@ class UserTableSeeder extends Seeder
             'password'  => bcrypt('iPhone7730__')
         ]);
         DB::table('users')->insert([
-            'name'      => 'AFE',
-            'email'     => 'afecuador3@gmail.com',
-            'password'  => bcrypt('afecuador')
+            'name'      => 'Admin',
+            'email'     => 'info@mitutoriadigital.com',
+            'password'  => bcrypt('mitutoriadigital')
         ]);
     }
 }

@@ -15,17 +15,9 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         $this->call(UserTableSeeder::class);
-        $this->call(CountryTableSeeder::class);
-        $this->call(StateTableSeeder::class);
-        $this->call(CityTableSeeder::class);
-        $this->call(CategoryTableSeeder::class);
-        $this->call(AssociationTableSeeder::class);
-        $this->call(ClubTableSeeder::class);
-        $this->call(CategoryClubTableSeeder::class);
-        $this->call(PlayerRoleTableSeeder::class);
-        $this->call(PlayerTableSeeder::class);
-        $this->call(PlayerProfileTableSeeder::class);
-        $this->call(PlayerReferenceTableSeeder::class);
+        $this->call(CourseTableSeeder::class);
+        $this->call(SubjectTableSeeder::class);
+        $this->call(PinTableSeeder::class);
 
         Model::reguard();
     }

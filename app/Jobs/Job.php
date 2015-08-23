@@ -1,6 +1,6 @@
 <?php
 
-namespace AfeSoccerSystem\Jobs;
+namespace MiTutorialDigital\Jobs;
 
 use Illuminate\Bus\Queueable;
 

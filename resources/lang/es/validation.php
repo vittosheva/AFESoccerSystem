@@ -115,7 +115,12 @@ return [
     */
 
     'attributes' => [
-        'username' => 'usuario',
-        'password' => 'contraseña'
+        'username'      => 'usuario',
+        'password'      => 'contraseña',
+        'name'          => 'nombre',
+        'course_id'     => 'curso',
+        'subject_id'    => 'materia',
+        'email'         => 'correo',
+        'pin_code'      => 'PIN',
     ],
 ];

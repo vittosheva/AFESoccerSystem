@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model' => AfeSoccerSystem\User::class,
+    'model' => MiTutorialDigital\User::class,
 
     /*
     |--------------------------------------------------------------------------

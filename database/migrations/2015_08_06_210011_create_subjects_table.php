@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAssociationsTable extends Migration
+class CreateSubjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,10 @@ class CreateAssociationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('associations', function (Blueprint $table) {
+        Schema::create('subjects', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 100);
-            $table->integer('city_id')->unsigned();
-            $table->foreign('city_id')->references('id')->on('cities');
+            $table->string('name');
+            $table->timestamps();
             $table->boolean('active')->default('1');
         });
     }
@@ -28,6 +27,6 @@ class CreateAssociationsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('associations');
+        Schema::drop('subjects');
     }
 }

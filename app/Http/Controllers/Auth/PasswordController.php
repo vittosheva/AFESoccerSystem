@@ -1,8 +1,8 @@
 <?php
 
-namespace AfeSoccerSystem\Http\Controllers\Auth;
+namespace MiTutorialDigital\Http\Controllers\Auth;
 
-use AfeSoccerSystem\Http\Controllers\Controller;
+use MiTutorialDigital\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller

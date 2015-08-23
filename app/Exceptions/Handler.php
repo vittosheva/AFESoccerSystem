@@ -1,6 +1,6 @@
 <?php
 
-namespace AfeSoccerSystem\Exceptions;
+namespace MiTutorialDigital\Exceptions;
 
 use Exception;
 use Symfony\Component\HttpKernel\Exception\HttpException;

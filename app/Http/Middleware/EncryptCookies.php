@@ -1,6 +1,6 @@
 <?php
 
-namespace AfeSoccerSystem\Http\Middleware;
+namespace MiTutorialDigital\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as BaseEncrypter;
 

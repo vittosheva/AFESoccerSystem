@@ -1,10 +1,10 @@
 <?php
 
-namespace AfeSoccerSystem\Http\Controllers\Auth;
+namespace MiTutorialDigital\Http\Controllers\Auth;
 
-use AfeSoccerSystem\User;
+use MiTutorialDigital\User;
 use Validator;
-use AfeSoccerSystem\Http\Controllers\Controller;
+use MiTutorialDigital\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
@@ -22,6 +22,9 @@ class AuthController extends Controller
     */
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+
+    protected $redirectPath = 'admin/dashboard';
+    protected $loginPath = 'admin';
 
     /**
      * Create a new authentication controller instance.
@@ -63,4 +66,5 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
 }

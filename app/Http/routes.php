@@ -12,12 +12,42 @@
 */
 
 // Homepage
-Route::get('/', 'FrontController@index');
+Route::get('/', [
+    'as'    => 'front.index.view',
+    'uses'  => 'FrontController@getIndex',
+]);
 
-// Login pages
-Route::controller('login', 'LoginController');
+// Register - Post
+Route::post('register', [
+    'as'    => 'front.register.post',
+    'uses'  => 'FrontController@postRegister',
+]);
+
+// Success
+Route::get('success', [
+    'as'    => 'front.success.view',
+    'uses'  => 'FrontController@getSuccess',
+]);
+
+
 
 // Admin Group
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
-    Route::get('/', 'AdminController@getIndex');
+Route::group(['prefix' => 'admin'], function(){
+
+    // Dashboard
+    Route::controller('dashboard', 'AdminController', [
+        'getIndex' => 'admin.dashboard.view',
+    ]);
+
+    // Login pages
+    Route::controller('/', 'LoginController', [
+        'getIndex'              => 'admin.login.view',
+        'postIndex'             => 'admin.login.post',
+        'getRegister'           => 'admin.register.view',
+        'postRegister'          => 'admin.register.post',
+        'getForgotPassword'     => 'admin.forgotpassword.view',
+        'postForgotPassword'    => 'admin.forgotpassword.post',
+        'getLogout'             => 'admin.logout.view',
+    ]);
+
 });

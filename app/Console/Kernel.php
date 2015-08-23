@@ -1,6 +1,6 @@
 <?php
 
-namespace AfeSoccerSystem\Console;
+namespace MiTutorialDigital\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -13,7 +13,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        \AfeSoccerSystem\Console\Commands\Inspire::class,
+        \MiTutorialDigital\Console\Commands\Inspire::class,
     ];
 
     /**

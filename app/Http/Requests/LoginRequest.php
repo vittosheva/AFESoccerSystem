@@ -1,8 +1,8 @@
 <?php
 
-namespace AfeSoccerSystem\Http\Requests;
+namespace MiTutorialDigital\Http\Requests;
 
-use AfeSoccerSystem\Http\Requests\Request;
+use MiTutorialDigital\Http\Requests\Request;
 
 class LoginRequest extends Request
 {

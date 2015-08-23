@@ -1,19 +1,26 @@
-<div class="panel panel-primary box effect2">
+<div class="panel panel-primary box effect2 login">
 
     <div class="panel-heading">
         <h3 class="panel-title text-center">Iniciar Sesión</h3>
     </div>
 
-    {!! Form::open(['url' => 'login', 'method' => 'POST', 'autocomplete' => 'off', 'role' => 'form']) !!}
+    {!! Form::open(['route' => 'admin.login.post', 'method' => 'POST', 'autocomplete' => 'off', 'role' => 'form']) !!}
 
         <div class="panel-body">
             <div class="row">
 
+                @if($errors->has('email'))
                 <div class="col-xs-12 col-sm-12 col-md-12">
-                    @include('errors.errors')
+                    <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <ul>
+                            <li>{{ $errors->first('email') }}</li>
+                        </ul>
+                    </div>
                 </div>
+                @endif
 
-                <div class="col-xs-12 col-sm-6 col-md-6 separator login-box">
+                <div class="col-xs-12 col-sm-12 col-md-12 login-box">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                         {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email', 'tabindex' => 1, 'autofocus', 'required']) !!}
@@ -24,21 +31,11 @@
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="remember" value="Remember" tabindex="3">
+                            <input type="checkbox" name="remember" tabindex="3">
                             Recordarme
                         </label>
                     </div>
-                    <p><a href="{{ url('login/forgot-password') }}">¿Olvidó su contraseña?</a></p>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6 social-login-box">
-                    <p>
-                        <a href="http://www.asofutbolistasecuador.com/" class="btn btn-success btn-block" target="_blank" role="button">Página Web</a>
-                        <br />
-                        <a href="https://www.facebook.com/pages/Asociaci%C3%B3n-de-Futbolistas-del-Ecuador/611328112239696" class="btn facebook btn-block" target="_blank" role="button">AFE en Facebook</a>
-                        <br />
-                        <a href="https://twitter.com/EcuadorAFE" class="btn twitter btn-block" target="_blank" role="button">AFE en Twitter</a>
-                    </p>
+                    <p><a href="{{ route('admin.forgotpassword.view') }}">¿Olvidó su contraseña?</a></p>
                 </div>
 
             </div>
@@ -59,7 +56,7 @@
 
                 @if (Config::get('settings.showRegister'))
                 <div class="col-xs-12 col-sm-6 col-md-6">
-                    <p>¿No tiene cuenta? <a href="{{ url('login/register') }}">Regístrece</a></p>
+                    <p>¿No tiene cuenta? <a href="{{ route('admin.register.view') }}">Regístrece</a></p>
                 </div>
                 @endif
 
