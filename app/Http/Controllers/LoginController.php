@@ -22,6 +22,11 @@ class LoginController extends Controller
      */
     public function getIndex()
     {
+        // Check if user is Authenticated
+        if (Auth::check()) {
+            return redirect()->intended('admin/dashboard');
+        }
+
         return view('back.login')->with([
             'title'     => 'Iniciar sesión' . $this->website,
             'keywords'  => 'afe, login, sistema afe'
@@ -41,26 +46,14 @@ class LoginController extends Controller
             'active' => 1,
         ];
 
-        $this->authenticate($credentials, $request['remember']);
+        if (Auth::attempt($credentials, $request->has('remember'))) {
+            return redirect()->intended('admin/dashboard');
+        }
 
         return Redirect::back()
             ->withInput($request->except('password'))
             ->withErrors(['email' => 'No existe el usuario con las credenciales proporcionadas']);
     }
-
-
-    /**
-     * Handle an authentication attempt.
-     *
-     * @return Response
-     */
-    public function authenticate($credentials, $remember)
-    {
-        if (Auth::attempt($credentials, $remember)) {
-            return redirect()->intended('admin/dashboard');
-        }
-    }
-
 
 
 
