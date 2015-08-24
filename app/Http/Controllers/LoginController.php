@@ -106,7 +106,11 @@ class LoginController extends Controller
      */
     public function getLogout()
     {
-        Auth::logout();
+        // Check if user is not Authenticated
+        if (Auth::check()) {
+            Auth::logout();
+        }
+
         return redirect()->route('admin.login.view');
     }
 

@@ -12,20 +12,24 @@ class PinTableSeeder extends Seeder
     public function run()
     {
         DB::table('pins')->insert([
-            'name'          => '12345678',
+            'pin'           => '12345678',
             'created_at'    => '2015-08-19 21:28:35',
+            'updated_at'    => '2015-08-19 21:28:35'
         ]);
         DB::table('pins')->insert([
-            'name'          => '23456789',
+            'pin'           => '23456789',
             'created_at'    => '2015-08-19 21:28:35',
+            'updated_at'    => '2015-08-19 21:28:35'
         ]);
         DB::table('pins')->insert([
-            'name'          => '34567890',
+            'pin'           => '34567890',
             'created_at'    => '2015-08-19 21:28:35',
+            'updated_at'    => '2015-08-19 21:28:35'
         ]);
         DB::table('pins')->insert([
-            'name'          => '45678901',
+            'pin'           => '45678901',
             'created_at'    => '2015-08-19 21:28:35',
+            'updated_at'    => '2015-08-19 21:28:35'
         ]);
     }
 }

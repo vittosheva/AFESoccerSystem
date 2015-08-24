@@ -1,0 +1,27 @@
+.alert-admin {
+    border-radius: 0;
+    border-right: 0;
+    border-left: 0;
+    margin-bottom: 0;
+}
+.page-header {
+    margin-top: 20px;
+}
+#admin .navbar {
+    background: #00415d;
+}
+#admin .navbar .navbar-header a {
+    color: #fff;
+}
+#admin .navbar .navbar-header a:hover {
+    color: #f0f0f0;
+}
+#admin .navbar .navbar-top-links a.dropdown-toggle {
+    color: #fff;
+}
+#admin .navbar .navbar-top-links a.dropdown-toggle:hover {
+    color: #000;
+}
+#admin .navbar .navbar-top-links a.dropdown-toggle:focus {
+    color: #000;
+}

@@ -10,9 +10,6 @@
     <!-- Custom CSS -->
     <link href="{{ asset('sb-admin/dist/css/sb-admin-2.css') }}" rel="stylesheet">
 
-    <!-- Morris Charts CSS -->
-    <link href="{{ asset('sb-admin/bower_components/morrisjs/morris.css') }}" rel="stylesheet">
-
     <!-- Font Awesome -->
     <link href="{{ asset('sb-admin/bower_components/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 

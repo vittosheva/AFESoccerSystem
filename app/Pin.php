@@ -18,7 +18,7 @@ class Pin extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'active'];
+    protected $fillable = ['pin', 'active'];
 
     /**
      * The attributes excluded from the model's JSON form.

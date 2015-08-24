@@ -29,8 +29,8 @@ class AdminController extends Controller
     public function getIndex()
     {
         return view('back.index')->with([
-            'title'     => 'Panel de control' . $this->website,
-            'keywords'  => 'afe, login, sistema afe'
+            'title'     => 'Panel de control',
+            'keywords'  => 'mi tutorial digital, tutorias digitales, panel de control, administracion'
         ]);
     }
 

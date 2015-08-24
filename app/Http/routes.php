@@ -35,9 +35,13 @@ Route::get('success', [
 Route::group(['prefix' => 'admin'], function(){
 
     // Dashboard
-    Route::controller('dashboard', 'AdminController', [
-        'getIndex' => 'admin.dashboard.view',
+    Route::get('dashboard', [
+        'as'    => 'admin.dashboard.view',
+        'uses'  => 'AdminController@getIndex',
     ]);
+
+    // Pins pages
+    Route::resource('pins', 'PinsController');
 
     // Login pages
     Route::controller('/', 'LoginController', [
@@ -49,5 +53,7 @@ Route::group(['prefix' => 'admin'], function(){
         'postForgotPassword'    => 'admin.forgotpassword.post',
         'getLogout'             => 'admin.logout.view',
     ]);
+
+
 
 });
