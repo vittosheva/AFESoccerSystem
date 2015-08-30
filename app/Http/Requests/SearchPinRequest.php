@@ -4,7 +4,7 @@ namespace MiTutorialDigital\Http\Requests;
 
 use MiTutorialDigital\Http\Requests\Request;
 
-class FrontRegisterRequest extends Request
+class SearchPinRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,7 @@ class FrontRegisterRequest extends Request
     public function rules()
     {
         return [
-            'pin_code'      => 'required|digits:8|exists:pins,pin,active,1',
-            'name'          => 'required',
-            'course_id'     => 'required|not_in:0',
-            'subject_id'    => 'required|not_in:0',
-            'email'         => 'required|email',
-            'password'      => 'required|min:8'
+            'pin' => 'required|min:4',
         ];
     }
 }

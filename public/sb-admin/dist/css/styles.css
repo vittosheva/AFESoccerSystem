@@ -25,3 +25,4 @@
 #admin .navbar .navbar-top-links a.dropdown-toggle:focus {
     color: #000;
 }
+#datos td { text-align: center; }

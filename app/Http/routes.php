@@ -11,49 +11,89 @@
 |
 */
 
-// Homepage
+/**
+ *
+ * FRONT PAGES
+ *
+ */
+
+// INDEX
 Route::get('/', [
-    'as'    => 'front.index.view',
-    'uses'  => 'FrontController@getIndex',
+    'as'    => 'front.home.index',
+    'uses'  => 'RegisterPlanController@create',
 ]);
 
-// Register - Post
-Route::post('register', [
-    'as'    => 'front.register.post',
-    'uses'  => 'FrontController@postRegister',
-]);
+// REGISTER PLAN
+Route::group(['prefix' => 'register-plan'], function() {
+    Route::resource('/', 'RegisterPlanController', [
+        'only'  => ['index', 'store', 'create'],
+        'names' => [
+            'index'     => 'front.registerplan.index',
+            'store'     => 'front.registerplan.store',
+            'create'    => 'front.registerplan.create',
+        ],
+    ]);
+    // REGISTER PLAN SUCCESS
+    Route::get('succcess', [
+        'as' => 'front.registerplan.success',
+        'uses' => 'RegisterPlanController@success'
+    ]);
+});
 
-// Success
-Route::get('success', [
-    'as'    => 'front.success.view',
-    'uses'  => 'FrontController@getSuccess',
-]);
 
 
+/**
+ *
+ * BACK PAGES
+ *
+ */
 
-// Admin Group
-Route::group(['prefix' => 'admin'], function(){
+// ADMIN
+Route::group(['prefix' => 'admin'], function() {
 
-    // Dashboard
+    // INDEX
+    Route::get('/', [
+        'as'            => 'back.home.index',
+        'uses'          => 'LoginController@getIndex',
+    ]);
+
+    // DASHBOARD
     Route::get('dashboard', [
-        'as'    => 'admin.dashboard.view',
-        'uses'  => 'AdminController@getIndex',
+        'as'            => 'back.dashboard.index',
+        'uses'          => 'AdminController@index',
+        'middleware'    => 'auth',
     ]);
 
-    // Pins pages
-    Route::resource('pins', 'PinsController');
+    // LOGIN
+    Route::group(['prefix' => 'login'], function() {
+        Route::controller('/', 'LoginController', [
+            'getIndex'              => 'back.login.index',
+            'postIndex'             => 'back.login.post',
+            'getRegister'           => 'back.register.index',
+            'postRegister'          => 'back.register.post',
+            'getForgotPassword'     => 'back.forgotpassword.index',
+            'postForgotPassword'    => 'back.forgotpassword.post',
+            'getLogout'             => 'back.logout.index',
+        ]);
+    });
 
-    // Login pages
-    Route::controller('/', 'LoginController', [
-        'getIndex'              => 'admin.login.view',
-        'postIndex'             => 'admin.login.post',
-        'getRegister'           => 'admin.register.view',
-        'postRegister'          => 'admin.register.post',
-        'getForgotPassword'     => 'admin.forgotpassword.view',
-        'postForgotPassword'    => 'admin.forgotpassword.post',
-        'getLogout'             => 'admin.logout.view',
-    ]);
-
-
+    // PINS
+    Route::group(['prefix' => 'pins', 'middleware' => 'auth'], function() {
+        Route::resource('/', 'PinsController', [
+            'names' => [
+                'index'     => 'back.pins.index',
+                'store'     => 'back.pins.store',
+                'create'    => 'back.pins.create',
+                'show'      => 'back.pins.show',
+                'update'    => 'back.pins.update',
+                'destroy'   => 'back.pins.destroy',
+                'edit'      => 'back.pins.edit',
+            ],
+        ]);
+        Route::get('getpins', [
+            'as' => 'back.pins.getpins',
+            'uses' => 'PinsController@getListings',
+        ]);
+    });
 
 });

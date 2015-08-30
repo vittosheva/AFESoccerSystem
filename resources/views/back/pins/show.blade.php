@@ -17,7 +17,6 @@
                         <div class="panel-heading">
                             <i class="fa fa-list-ol fa-fw"></i> {{ $title }}
                         </div>
-                        <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="dataTable_wrapper">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -28,6 +27,7 @@
                                         <th class="text-center">Fecha de creación</th>
                                         <th class="text-center">Fecha de modificación</th>
                                         <th class="text-center">Estado</th>
+                                        <th class="text-center">Acciones</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -38,6 +38,10 @@
                                             <td class="text-center">{{ $pin->created_at }}</td>
                                             <td class="text-center">{{ $pin->updated_at }}</td>
                                             <td class="text-center">{!! ($pin->active) ? '<i class="fa fa-check text-success"></i>' : '<i class="fa fa-times text-danger"></i>' !!}</td>
+                                            <td class="text-center">
+                                                <button value="{{ $pin->id }}" OnClick="editPin(this);" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">Editar</button>
+                                                <button value="{{ $pin->id }}" OnClick="deletePin(this);" class="btn btn-danger btn-xs">Eliminar</button>
+                                            </td>
                                         </tr>
                                     @endforeach
                                     </tbody>

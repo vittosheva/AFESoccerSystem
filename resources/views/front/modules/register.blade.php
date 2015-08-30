@@ -1,9 +1,9 @@
 <div class="logo">
-    <a href="{{ route('front.index.view') }}" title="{{ $title }}"></a>
+    <a href="{{ route('front.home.index') }}" title="{{ $title }}"></a>
 </div>
 <div class="panel panel-form">
 
-    {!! Form::open(['route' => 'front.register.post', 'method' => 'POST', 'autocomplete' => 'off', 'role' => 'form', 'class' => 'form-horizontal', 'id' => 'form-register']) !!}
+    {!! Form::open(['route' => 'front.registerplan.store', 'method' => 'POST', 'autocomplete' => 'off', 'role' => 'form', 'class' => 'form-horizontal', 'id' => 'form-register']) !!}
 
         <fieldset>
 

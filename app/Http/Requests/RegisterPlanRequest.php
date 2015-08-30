@@ -4,7 +4,7 @@ namespace MiTutorialDigital\Http\Requests;
 
 use MiTutorialDigital\Http\Requests\Request;
 
-class FrontRegisterRequest extends Request
+class RegisterPlanRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.

@@ -98,9 +98,6 @@ class LoginController extends Controller
         return "postForgotPassword";
     }
 
-
-
-
     /**
      * Get Logout of admin
      */
@@ -111,7 +108,7 @@ class LoginController extends Controller
             Auth::logout();
         }
 
-        return redirect()->route('admin.login.view');
+        return redirect()->route('back.login.index');
     }
 
 }

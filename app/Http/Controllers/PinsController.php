@@ -9,6 +9,7 @@ use MiTutorialDigital\Http\Controllers\Controller;
 
 use MiTutorialDigital\Pin;
 use MiTutorialDigital\Http\Requests\PinRequest;
+use MiTutorialDigital\Http\Requests\SearchPinRequest;
 
 use Session;
 use Illuminate\Support\Facades\Input;
@@ -16,23 +17,8 @@ use Illuminate\Support\Facades\Input;
 class PinsController extends Controller
 {
 
-    protected $paginateCount = 15;
+    protected $paginateCount = 10;
 
-    /**
-     * Create a new authentication controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
     public function index()
     {
         $pin = new Pin();
@@ -64,32 +50,34 @@ class PinsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request  $request
+     * @param  PinRequest  $request
      * @return Response
      */
     public function store(PinRequest $request)
     {
         $input = $request->all();
         Pin::create($input);
-        Session::flash('flash_messages', 'PIN creado exitosamente!');
+        Session::flash('messages', 'PIN creado exitosamente!');
 
-        return redirect()->back();
+        return redirect()->back()->with([
+            'flash_messages' => 'success'
+        ]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  SearchPinRequest  $request
      * @return Response
      */
-    public function show($id)
+    public function show(SearchPinRequest $request)
     {
-        $pin = Input::get('pin');
+        $pin = $request->get('pin');
 
         $pinModel = new Pin();
         $pins = $pinModel->where('pin', 'LIKE', '%'.$pin.'%')->paginate($this->paginateCount);
 
-        return view('back.pins.show', compact('pins'))->with([
+        return view('back.pins.index', compact('pins'))->with([
             'title'     => 'Buscar pin',
             'keywords'  => 'pins, mi tutorial digital, tutorias digitales'
         ]);
@@ -104,6 +92,12 @@ class PinsController extends Controller
     public function edit($id)
     {
         return view('back.pins.edit');
+
+        /*$pin = new Pin();
+        $pins = $pin->find($id);
+        return response()->json(
+            $pins->toArray()
+        );*/
     }
 
     /**
@@ -125,9 +119,40 @@ class PinsController extends Controller
      * @return Response
      */
     public function destroy($id)
-    {echo $id;
-        $affectedRows  = Pin::where('id', '=', $id)->delete();
-        Session::flash('flash_messages', 'PIN eliminado correctamente!');
+    {
+        Pin::where('id', '=', $id)->delete();
+
+        /*return response()->json([
+            "messages" => "PIN eliminado correctamente!"
+        ]);*/
+
         return redirect()->back();
     }
+
+    /**
+     * Defining A Catch-All Method.
+     *
+     * @param  array  $parameters
+     * @return void
+     */
+    public function missingMethod($parameters = array())
+    {
+        //
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+
+    public function getListings()
+    {
+        $pin = new Pin();
+        $pins = $pin->all();
+        return response()->json(
+            $pins->toArray()
+        );
+    }
+
 }

@@ -19,7 +19,7 @@ class UserTableSeeder extends Seeder
         DB::table('users')->insert([
             'name'      => 'Admin',
             'email'     => 'info@mitutoriadigital.com',
-            'password'  => bcrypt('mitutoriadigital')
+            'password'  => bcrypt('mitutorialdigital')
         ]);
     }
 }

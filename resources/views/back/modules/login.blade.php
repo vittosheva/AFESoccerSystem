@@ -4,7 +4,7 @@
         <h3 class="panel-title text-center">Iniciar Sesión</h3>
     </div>
 
-    {!! Form::open(['route' => 'admin.login.post', 'method' => 'POST', 'autocomplete' => 'off', 'role' => 'form']) !!}
+    {!! Form::open(['route' => 'back.login.post', 'method' => 'POST', 'autocomplete' => 'off', 'role' => 'form']) !!}
 
         <div class="panel-body">
             <div class="row">
@@ -35,7 +35,7 @@
                             Recordarme
                         </label>
                     </div>
-                    <p><a href="{{ route('admin.forgotpassword.view') }}">¿Olvidó su contraseña?</a></p>
+                    <!--<p><a href="{{ route('back.forgotpassword.index') }}">¿Olvidó su contraseña?</a></p>-->
                 </div>
 
             </div>
@@ -56,7 +56,7 @@
 
                 @if (Config::get('settings.showRegister'))
                 <div class="col-xs-12 col-sm-6 col-md-6">
-                    <p>¿No tiene cuenta? <a href="{{ route('admin.register.view') }}">Regístrece</a></p>
+                    <p>¿No tiene cuenta? <a href="{{ route('back.register.index') }}">Regístrece</a></p>
                 </div>
                 @endif
 

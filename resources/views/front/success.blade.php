@@ -7,7 +7,7 @@
     <div class="panel panel-form">
         <p class="success">Registro completo</p>
         <p class="text-center">
-            <a href="{{ route('front.index.view') }}" class="btn button-send">Volver</a>
+            <a href="{{ route('front.home.index') }}" class="btn button-send">Volver</a>
         </p>
     </div>
 

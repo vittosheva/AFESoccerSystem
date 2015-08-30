@@ -11,4 +11,4 @@
     <script src="{{ asset('sb-admin/dist/js/sb-admin-2.js') }}"></script>
 
     <!-- Personalized Scripts -->
-    <script src="{{ asset('sb-admin/dist/js/scripts.js') }}"></script>
+    <script src="{{ asset('sb-admin/js/scripts.js') }}"></script>

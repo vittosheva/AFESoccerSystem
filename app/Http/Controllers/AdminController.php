@@ -14,19 +14,9 @@ class AdminController extends Controller
 {
 
     /**
-     * Create a new authentication controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
      * Get to admin index
      */
-    public function getIndex()
+    public function index()
     {
         return view('back.index')->with([
             'title'     => 'Panel de control',

@@ -11,12 +11,12 @@
     </div>
 @endif
 
-@if(Session::has('flash_messages'))
+@if(Session::has('messages'))
     <div class="row">
         <div class="row">
-            <div class="alert alert-admin alert-success alert-dismissible fade in" role="alert">
+            <div class="alert alert-admin alert-{{ $flash_messages or 'success' }} alert-dismissible fade in" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                {{ Session::get('success') }}
+                {{ Session::get('messages') }}
             </div>
         </div>
     </div>

@@ -19,6 +19,12 @@
                             </div>
                             <div class="panel-body">
                                 <div class="dataTable_wrapper">
+
+                                    <div id="msj-success" class="alert alert-success alert-dismissible" role="alert" style="display:none">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <div class="message"></div>
+                                    </div>
+
                                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                         <thead>
                                             <tr>
@@ -39,13 +45,8 @@
                                                 <td class="text-center">{{ $pin->updated_at }}</td>
                                                 <td class="text-center">{!! ($pin->active) ? '<i class="fa fa-check text-success" title="PIN libre"></i>' : '<i class="fa fa-times text-danger" title="PIN usado"></i>' !!}</td>
                                                 <td class="text-center">
-                                                    <a href="{{ route('admin.pins.edit', $pin->id) }}" class="text-primary" title="Editar PIN"><i class="fa fa-pencil"></i></a>
-                                                    <span>&nbsp;</span>
-                                                    <a href="{{ route('admin.pins.destroy', $pin->id) }}" class="text-danger" title="Eliminar PIN" id=""
-                                                       data-id="{{ $pin->id }}"
-                                                       data-method="delete"
-                                                       data-confirm="Are you sure?"
-                                                       data-token="{{ csrf_token() }}"><i class="fa fa-trash-o"></i></a>
+                                                    <button value="{{ $pin->id }}" {!! ($pin->active) ? 'OnClick="editPin(this);" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal"' : 'class="btn btn-primary btn-xs disabled"' !!}>Editar</button>
+                                                    <button value="{{ $pin->id }}" {!! ($pin->active) ? 'OnClick="deletePin(this);" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal"' : 'class="btn btn-danger btn-xs disabled"' !!}>Eliminar</button>
                                                 </td>
                                             </tr>
                                             @endforeach
@@ -54,6 +55,8 @@
                                     <div class="text-center">
                                         {!! $pins->render() !!}
                                     </div>
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
+
                                 </div>
                             </div>
                         </div>

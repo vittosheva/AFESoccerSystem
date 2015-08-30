@@ -18,14 +18,14 @@ class Pin extends Model
      *
      * @var array
      */
-    protected $fillable = ['pin', 'active'];
+    protected $fillable = ['pin', 'created_at', 'updated_at', 'active'];
 
     /**
      * The attributes excluded from the model's JSON form.
      *
      * @var array
      */
-    protected $hidden = ['active'];
+    protected $hidden = [];
 
     /**
      * Set timestamps 'true' to use 'updated_at' and 'created_at' in DB
