@@ -1,6 +1,6 @@
-/*
+/**
  * MESSAGES
- * */
+ */
 $(function () {
     // Hide alert success after 5 seg
     window.setTimeout(function () {

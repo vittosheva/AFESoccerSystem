@@ -1,30 +1,30 @@
-<p>** Texto introductorio **</p>
+<p>//** Ingresar un texto introductorio al comienzo del email **//</p>
 
-<table width="500" border="1">
+<table width="500" cellpadding="5" border="1" style="border-collapse:collapse;">
     <tr>
-        <td>PIN</td>
+        <td><strong>PIN</strong></td>
         <td>{{ $PIN }}</td>
     </tr>
     <tr>
-        <td>Nombre</td>
+        <td><strong>Nombre</strong></td>
         <td>{{ $name }}</td>
     </tr>
     <tr>
-        <td>Curso</td>
+        <td><strong>Curso</strong></td>
         <td>{{ $course }}</td>
     </tr>
     <tr>
-        <td>Materia</td>
+        <td><strong>Materia</strong></td>
         <td>{{ $subject }}</td>
     </tr>
     <tr>
-        <td>Correo</td>
+        <td><strong>Usuario</strong></td>
         <td>{{ $email }}</td>
     </tr>
     <tr>
-        <td>Contraseña</td>
+        <td><strong>Contraseña</strong></td>
         <td>{{ $password }}</td>
     </tr>
 </table>
 <br>
-<p>** Texto final **</p>
+<p>//** Ingresar un texto al final del email **//</p>

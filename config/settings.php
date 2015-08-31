@@ -10,6 +10,6 @@ return [
     'emailFrom'             => 'info@mitutorialdigital.com',
     'emailReply'            => 'info@mitutorialdigital.com',
     'emailBccVar'           => true,
-    'emailBcc'              => 'vittosheva@gmail.com',
+    'emailBcc'              => 'vittosheva@gmail.com, aalvear@outlook.com',
     'emailBccName'          => 'Vittorio Dormi',
 ];

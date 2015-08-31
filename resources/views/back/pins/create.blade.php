@@ -16,7 +16,7 @@
                 <div class="panel-body">
                     <div class="content">
 
-                        {!! Form::open(['route' => 'admin.pins.store'], ['class' => 'form', 'autocomplete' => 'off']) !!}
+                        {!! Form::open(['route' => 'back.pins.store'], ['class' => 'form', 'autocomplete' => 'off']) !!}
                             <div class="form-group">
                                 {!! Form::label('pin', 'PIN:', ['class' => 'control-label']) !!}
                                 {!! Form::text('pin', null, ['class' => 'form-control', 'placeholder' => 'Ingresar PIN', 'required' => 'required', 'autofocus' => 'autofocus']) !!}
